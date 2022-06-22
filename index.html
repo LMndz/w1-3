@@ -99,10 +99,10 @@
             </div>
         </section>
    </main>
-</body>
+   </body>
 </html>
 <script>
-
+    
   function iva()
   {
       document.getElementById("detalles").style = "display: block;";
@@ -132,25 +132,37 @@
           //Desestructuración
 
           
-          var total = "Precio del producto: " + precio + "$" + '   |   '
-          + "Cantidad a llevar: " + cantidad + '   |   ' 
-          + "IVA: " + iva+"%" + '   |   ' 
-          + "Valor total de la compra: " + (cantidad*precio*iva/100 + cantidad*precio)+"$";
+          var total = "Valor del producto: " +precio + "$" + '    |   '+ "Cantidad de producto: " + cantidad + '    |    '+ "IVA: " + iva+"%" + '     |     '+ "Total: " + (cantidad*precio*iva/100 + cantidad*precio)+"$";
           document.getElementById("total").innerHTML = total;
           document.getElementById("total1").innerHTML = total;
+          mostrarFactura();
       }
       else
       {
           //no hay iva
 
           //Desestructuración
-          var total = "Precio del producto: " + precio + "$" + '   |   '
-          + "Cantidad a llevar: " + cantidad + '   |   ' 
-          + "IVA: " + "No aplica" + '   |   ' 
-          + "Valor total de la compra: " + (cantidad*precio)+"$";
+          var total = "Valor del producto: " +precio + "$" + '    |      '+ "Cantidad de producto: " + cantidad + '    |     '+ "IVA: No aplica: " + '     |     '+ "Total: " + (cantidad*precio*iva/100 + cantidad*precio)+"$";
           document.getElementById("total").innerHTML = total;
           document.getElementById("total1").innerHTML = total;
+          mostrarFactura();
       }
-  }
+      
+      function mostrarFactura()
+      { 
+        
+    console.log("---------------------------------Factura----------------------------------------" )
+    console.log(`Nombre del empleado : {Nombre Empleado}    Cédula del empleado: {Cedula Empleado}` )
+    console.log(`Dirección del empleado: {direccion Empleado} Teléfono del empleado: {telefono Empleado}`)
+    
+    console.log(`Nombre del cliente : {Nombre Cliente} Cédula del cliente: {Cedula Cliente}` )
+    console.log(`Dirección del cliente: {direccionCliente} Teléfono del cliente: {telefonoCliente}`)
+    console.log("--------------------------------------------------------------------------------" )
+    console.log(total)
+
+        }
+  
+  
+    }
 
 </script>
